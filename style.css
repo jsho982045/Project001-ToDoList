@@ -1,0 +1,85 @@
+.body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #34daf39e, #f738e7);
+    position: fixed;
+    backdrop-filter: blur(10px);
+}
+
+.sub-container {
+    border: 5px transparent ;
+    border-radius: 8px;
+    width: 500px;
+    height: 350px;
+    background-color: transparent;
+    box-shadow: 0 40px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+}
+h1 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 315px;
+}
+.list {
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: -300px;
+}
+
+#flist {
+    border-width: 5px;
+    margin: 5px;
+    line-height: 50px;
+}
+
+#input-box {
+    border-radius: 5px;
+    border-width: 3px;
+    width: 250px;
+    height: 50px;
+    margin-left: 35px;
+    position: relative;
+}
+
+.white-border {
+    border: 1px solid #fff;
+    width: 400px;
+    margin-left: 5px;
+
+}
+
+#add-button {
+    background: blue;
+    border: none;
+    color: white;
+    width: 50px;
+    height: 57px;
+    margin-left: 357px;
+    margin-top: -57px;
+    cursor: pointer;
+    position: fixed;
+    border-radius: 5px;
+    border: 2px solid #000;
+}
+
+#date-button {
+    width: 50px;
+    height: 57px;
+    margin-left: 300px;
+    margin-top: -57px;
+    position: fixed;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+

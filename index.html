@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" conent="width=device-width", initial-scale=1.0>
+        <title>Project 001 - To Do List</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sub-container">
+                <h1>To Do List</h1>
+                <div class="list" id="list">
+                    <ul class="list-items" id="list-items">
+                        <li class="list-item">
+                            <input type="checkbox">
+                            <label id="flist" name="flist">Walk the dog</label>
+                            <div class="white-border"></div>
+                            </li>
+                        <li class="list-item">
+                            <input type="checkbox">
+                            <label id="flist" name="flist" >Buy milk</label>
+                            <div class="white-border"></div>
+                        </li>
+                        <li class="list-item">
+                            <input type="checkbox">
+                            <label id="flist" name="flist">Do homework</label>
+                            <div class="white-border"></div>
+                        </li>
+                        <li class="list-item">
+                            <input type="checkbox"> 
+                            <label id="flist" name="flist">Study</label></li>
+                            <div class="white-border"></div>
+                    </ul>
+                    <input class="input-box" id="input-box" placeholder="Type a new item here" required>
+                    <div class="date-button">                    
+                        <button class="date-button" id="date-button">📅</button>
+                        <div class="add-button">
+                            <button class="add-button" id="add-button">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
