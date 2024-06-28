@@ -39,27 +39,27 @@
                 </li>
                 <div class="white-bar" id="white-bar"></div>
             </ul>
-            <input class="input-box" id="input-box" placeholder="Type a new item here" required>
+            <form>
+                <input type="text" class="input-box" id="input-box" placeholder="Type a new item here..." required />
+            </form>
             <div class="date-button">
-                <input type="button" class="datepicker" id="datepicker" value="📅" />
+                <input type="button" class="datepicker" id="datepicker" style="display: none;"/>
+                <button id="date-button">📅</button>
             </div>
             <div class="add-button">
                 <button class="add-button" id="add-button">Add</button>
             </div>
         </div>
+        <div class="color-legend">
+            <button class="urgency-levels" id="urgency-levels" onclick="showColorLegend()">Urgency</button>
+            <div id="color-bar-container" style="display:none;">
+                <label class="color-bar-green" style="background-color: greenyellow;">Not Important</label>
+                <label class="color-bar-blue" style="background-color: blue;">Medium</lable>
+                <label class="color-bar-red" style="background-color: red;">High</label>
+            </div>
+
+        </div>
     </div>
-    <script>
-        $(function() {
-            // Initialize the datepicker on the input field
-            $("#datepicker").datepicker();
-
-            // Show the datepicker when the calendar button is clicked
-            $("#date-button").click(function() {
-                $("#datepicker").datepicker("show");
-            });
-        });
-
-    </script>
     <script src="script.js"></script>
 </body>
 </html>

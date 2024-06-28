@@ -1,6 +1,25 @@
-document.getElementById("add-button").addEventListener("click", addTask); // We use getElementById to search for any instances of add-button in the html. We then use an eventListener to track when the button is clicked which will call the addTask function
+var selectedDate = ""; // Define selectedDate globally
+
+$(function() {
+    // Initialize the datepicker on the hidden input field
+    $("#datepicker").datepicker({
+        onSelect: function(dateText) {
+            selectedDate = dateText; // Capture the selected date
+        }
+    });
+
+    // Show the datepicker when the calendar button is clicked
+    $("#date-button").click(function() {
+        $("#datepicker").datepicker("show");
+    });
+});
+
+document.getElementById("add-button").addEventListener("click", function() {
+    addTask(selectedDate); // Pass selectedDate to addTask
+});
+
 // Function to add new tasks
-function addTask() {    
+function addTask(selectedDate) {    
     // Get input
     var taskInput = document.getElementById("input-box").value;
     // Create new item in list
@@ -16,17 +35,23 @@ function addTask() {
     var label = document.createElement('label');
     // Adds the task class to ensure styles are the same for new tasks added as the default tasks
     label.classList.add('task');
-    // Getting the input
+    // Setting the text content of the label
     label.textContent = taskInput;
+
+    // Creating due date element
+    var dateLabel = document.createElement('span');
+    dateLabel.classList.add('due-date');
+    dateLabel.textContent = "due: " + selectedDate;
 
     // Adding the delete button to the new task
     var newDeleteButton = document.createElement('button');
     newDeleteButton.classList.add('delete-button');
     newDeleteButton.textContent = 'X';
 
-    // Adding the checkbox and styling to the new task
+    // Adding the checkbox, label, due date, and delete button to the new task
     newTask.appendChild(checkbox);
     newTask.appendChild(label);
+    newTask.appendChild(dateLabel); // Append due date
     newTask.appendChild(newDeleteButton);
     
     // Add new tasks to the list
@@ -50,11 +75,20 @@ function deleteTask(event) {
         // We access the parent element to delete the entire task and styling
         var taskItem = event.target.parentElement;
         taskItem.remove();
-    }
-    // Remove the white bar 
-    var whiteBar = taskItem.nextElementSibling;
-    if (whiteBar && whiteBar.classList.contains("white-bar")) {
-        whiteBar.remove();
+        
+        // Remove the white bar 
+        var whiteBar = taskItem.nextElementSibling;
+        if (whiteBar && whiteBar.classList.contains("white-bar")) {
+            whiteBar.remove();
+        }
     }
 }
 
+function showColorLegend() {
+    var showColorLegend = document.getElementById("color-bar-container");
+    if(showColorLegend.style.display === "none") {
+        showColorLegend.style.display = "block";
+    } else {
+        showColorLegend.style.display = "none";
+    }
+}
