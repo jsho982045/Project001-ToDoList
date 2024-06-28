@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 001 - To Do List</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <div class="container">
@@ -38,13 +41,25 @@
             </ul>
             <input class="input-box" id="input-box" placeholder="Type a new item here" required>
             <div class="date-button">
-                <button class="date-button" id="date-button">📅</button>
+                <input type="button" class="datepicker" id="datepicker" value="📅" />
             </div>
             <div class="add-button">
                 <button class="add-button" id="add-button">Add</button>
             </div>
         </div>
     </div>
+    <script>
+        $(function() {
+            // Initialize the datepicker on the input field
+            $("#datepicker").datepicker();
+
+            // Show the datepicker when the calendar button is clicked
+            $("#date-button").click(function() {
+                $("#datepicker").datepicker("show");
+            });
+        });
+
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
