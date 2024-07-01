@@ -1,5 +1,20 @@
 var selectedDate = ""; // Define selectedDate globally
 
+
+var checkbox = document.querySelectorAll('.checkbox');
+
+// Creating an instance for JSConfetti
+const jsConfetti = new JSConfetti();
+
+// Trigger confetti when checkbox is checked 
+document.querySelectorAll(".checkbox").forEach(function(checkbox) {
+    checkbox.addEventListener("click", function(){
+        if(checkbox.checked == true) {
+            jsConfetti.addConfetti();
+        }
+    });
+});
+
 $(function() {
     // Initialize the datepicker on the hidden input field
     $("#datepicker").datepicker({
@@ -92,3 +107,6 @@ function showColorLegend() {
         showColorLegend.style.display = "none";
     }
 }
+
+
+
